@@ -30,9 +30,9 @@
       </ButtonBar>
       <ToolBar prefHeight="37.0" prefWidth="600.0">
          <items>
-            <Button mnemonicParsing="false" text="Main" />
-            <Button mnemonicParsing="false" text="Log" />
-            <Button mnemonicParsing="false" text="About" />
+            <Button fx:id="mainButton" mnemonicParsing="false" onAction="#goToMain" text="Main" />
+            <Button fx:id="logButton" mnemonicParsing="false" onAction="#goToLog" text="Log" />
+            <Button fx:id="aboutButton" mnemonicParsing="false" onAction="#goToAbout" text="About" />
          </items>
       </ToolBar>
       <LineChart layoutX="300.0" layoutY="150.0" prefHeight="235.0" prefWidth="273.0">

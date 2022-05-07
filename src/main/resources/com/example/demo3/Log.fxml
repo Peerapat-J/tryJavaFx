@@ -1,14 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.BubbleChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.demo3.Log"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo3.HelloController">
+   <children>
+      <ToolBar prefHeight="37.0" prefWidth="600.0">
+         <items>
+            <Button fx:id="mainButton" mnemonicParsing="false" onAction="#goToMain" text="Main" />
+            <Button fx:id="logButton" mnemonicParsing="false" onAction="#goToLog" text="Log" />
+            <Button fx:id="aboutButton" mnemonicParsing="false" onAction="#goToAbout" text="About" />
+         </items>
+      </ToolBar>
+      <ScrollBar layoutX="584.0" layoutY="38.0" orientation="VERTICAL" prefHeight="321.0" prefWidth="16.0" />
+      <TextArea layoutX="206.0" layoutY="36.0" prefHeight="321.0" prefWidth="394.0" />
+      <BarChart layoutX="6.0" layoutY="197.0" prefHeight="161.0" prefWidth="126.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <BubbleChart layoutX="5.0" layoutY="54.0" prefHeight="161.0" prefWidth="163.0">
+        <xAxis>
+          <NumberAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BubbleChart>
+   </children>
 </AnchorPane>

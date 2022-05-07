@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Box?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.demo3.About"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo3.HelloController">
+   <children>
+      <ToolBar prefHeight="37.0" prefWidth="600.0">
+         <items>
+            <Button fx:id="mainButton" mnemonicParsing="false" onAction="#goToMain" text="Main" />
+            <Button fx:id="logButton" mnemonicParsing="false" onAction="#goToLog" text="Log" />
+            <Button fx:id="aboutButton" mnemonicParsing="false" onAction="#goToAbout" text="About" />
+         </items>
+      </ToolBar>
+      <Box depth="100" height="100" layoutX="76.0" layoutY="103.0" width="100" />
+      <Label layoutX="35.0" layoutY="163.0" text="This's my pic" />
+      <Label layoutX="35.0" layoutY="190.0" text="Name:" />
+      <Label layoutX="35.0" layoutY="218.0" text="Bla bla . . ." />
+      <Separator layoutX="154.0" layoutY="37.0" orientation="VERTICAL" prefHeight="321.0" prefWidth="7.0" />
+      <Label layoutX="190.0" layoutY="53.0" text="Experance . . . " />
+      <Label layoutX="190.0" layoutY="276.0" text="Donate via . . ." />
+      <Label layoutX="190.0" layoutY="310.0" text="Developer contact:" />
+      <TextArea layoutX="190.0" layoutY="72.0" prefHeight="200.0" prefWidth="381.0" />
+      <Hyperlink layoutX="300.0" layoutY="307.0" text="Peerapat.Jardrit@gmail.com" />
+   </children>
 </AnchorPane>
