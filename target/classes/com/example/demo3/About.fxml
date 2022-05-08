@@ -4,10 +4,10 @@
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Box?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo3.HelloController">
    <children>
@@ -18,15 +18,27 @@
             <Button fx:id="aboutButton" mnemonicParsing="false" onAction="#goToAbout" text="About" />
          </items>
       </ToolBar>
-      <Box depth="100" height="100" layoutX="76.0" layoutY="103.0" width="100" />
-      <Label layoutX="35.0" layoutY="163.0" text="This's my pic" />
-      <Label layoutX="35.0" layoutY="190.0" text="Name:" />
-      <Label layoutX="35.0" layoutY="218.0" text="Bla bla . . ." />
+      <Box depth="100" height="100" layoutX="79.0" layoutY="103.0" width="100" />
+      <Label layoutX="19.0" layoutY="167.0" text="Softawre Version 0.0.1" />
+      <Label layoutX="19.0" layoutY="194.0" text="Freeware Lisence" />
       <Separator layoutX="154.0" layoutY="37.0" orientation="VERTICAL" prefHeight="321.0" prefWidth="7.0" />
-      <Label layoutX="190.0" layoutY="53.0" text="Experance . . . " />
-      <Label layoutX="190.0" layoutY="276.0" text="Donate via . . ." />
+      <Label layoutX="190.0" layoutY="53.0" text="Experance">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Label layoutX="190.0" layoutY="276.0" text="Donation: N/A" />
       <Label layoutX="190.0" layoutY="310.0" text="Developer contact:" />
-      <TextArea layoutX="190.0" layoutY="72.0" prefHeight="200.0" prefWidth="381.0" />
-      <Hyperlink layoutX="300.0" layoutY="307.0" text="Peerapat.Jardrit@gmail.com" />
+      <Hyperlink fx:id="mailToMe" layoutX="300.0" layoutY="307.0" onAction="#mailToMe" text="Peerapat.Jardrit@gmail.com" />
+      <Label layoutX="201.0" layoutY="78.0" text="- Test Engineer at Microchip (Thailand) co, ltd. (2017 - 2018)" />
+      <Label layoutX="202.0" layoutY="99.0" prefHeight="37.0" prefWidth="396.0" text="- Network Engineer at UIH Co.,Ltd. (2018-2019)" wrapText="true" />
+      <Label layoutX="202.0" layoutY="130.0" prefHeight="37.0" prefWidth="396.0" text="- Firmware Engineer at Western Digital (Tahiland) co., ltd. (2019 - 2021)" wrapText="true" />
+      <Hyperlink fx:id="agreement" layoutX="15.0" layoutY="217.0" onAction="#freewareAgreement" text="Agreement" />
+      <Label layoutX="190.0" layoutY="176.0" text="Education">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="199.0" layoutY="195.0" prefHeight="37.0" prefWidth="396.0" text="- Bsd, Electronics Engineering, IDED, KMITL." wrapText="true" />
+      <Label layoutX="199.0" layoutY="230.0" prefHeight="37.0" prefWidth="396.0" text="- Msd, Electrical for communication Engineering, IDED, KMITL." wrapText="true" />
    </children>
 </AnchorPane>
