@@ -57,34 +57,30 @@ public class HelloController implements Initializable {
         if((cordYObject - 5) <= 250 && (cordYObject - 5) >= 210){
             object.setLayoutY(cordYObject -= 5);
         }
-        System.out.println("X:" + cordXObject + ", Y:" + cordYObject);
     }
     public void Right(ActionEvent event){
         cordXObject = object.getLayoutX();
         if((cordXObject + 5) <= 171 && (cordXObject + 5) >= 141){
             object.setLayoutX(cordXObject += 5);
         }
-        System.out.println("X:" + cordXObject + ", Y:" + cordYObject);
     }
     public void Down(ActionEvent event){
         cordYObject = object.getLayoutY();
         if((cordYObject + 5) <= 250 && (cordYObject + 5) >= 210){
             object.setLayoutY(cordYObject += 5);
         }
-        System.out.println("X:" + cordXObject + ", Y:" + cordYObject);
     }
     public void Left(ActionEvent event){
         cordXObject = object.getLayoutX();
         if((cordXObject - 5) <= 171 && (cordXObject - 5) >= 141){
             object.setLayoutX(cordXObject -= 5);
         }
-        System.out.println("X:" + cordXObject + ", Y:" + cordYObject);
     }
 
     public void Reset(ActionEvent event){
         object.setRadius(50);
     }
-
+    final double SCALE = 500;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         if (object != (null)){
@@ -93,18 +89,13 @@ public class HelloController implements Initializable {
             widthController.valueProperty().addListener(new ChangeListener<Object>() {
                 @Override
                 public void changed(ObservableValue<?> observableValue, Object o, Object t1) {
-//                widthOfObject = object.getScaleX();
-                    System.out.println("objScaleX:" + widthController.getValue() / 500);
-                    System.out.println("w-default: " + wDefault);
-                    object.setScaleX(wDefault + (widthController.getValue() / 500));
+                    object.setScaleX(wDefault + (widthController.getValue() / SCALE));
                 }
             });
             hightController.valueProperty().addListener(new ChangeListener<Object>() {
                 @Override
                 public void changed(ObservableValue<? extends Object> observableValue, Object number, Object t1) {
-                    System.out.println("objScaleY:" + hightController.getValue() / 500);
-                    System.out.println("h-default: " + hDefault);
-                    object.setScaleY(hDefault + (hightController.getValue() / 500));
+                    object.setScaleY(hDefault + (hightController.getValue() / SCALE));
                 }
             });
         }
@@ -114,23 +105,19 @@ public class HelloController implements Initializable {
         Parent mainFtml = FXMLLoader.load(getClass().getResource("Main.fxml"));
         Stage mainWindow = (Stage) mainButton.getScene().getWindow();
         mainWindow.setScene(new Scene(mainFtml));
-        System.out.println("main btn clicked!");
     }
     public void goToLog(ActionEvent event) throws IOException {
         Parent LogFtml = FXMLLoader.load(getClass().getResource("Log.fxml"));
         Stage mainWindow = (Stage) logButton.getScene().getWindow();
         mainWindow.setScene(new Scene(LogFtml));
-        System.out.println("log btn clicked!");
 
     }
     public void goToAbout(ActionEvent event) throws IOException {
         Parent AboutFtml = FXMLLoader.load(getClass().getResource("About.fxml"));
         Stage mainWindow = (Stage) aboutButton.getScene().getWindow();
         mainWindow.setScene(new Scene(AboutFtml));
-        System.out.println("abt btn clicked!");
     }
 
-    //Mailing hyperlink
     public void mailToMe() throws URISyntaxException, IOException {
         Desktop desktop = Desktop.getDesktop();
         System.out.println("Mail get clicked");
@@ -149,18 +136,11 @@ public class HelloController implements Initializable {
                 alert.setTitle("Can't create email");
                 alert.setContentText("Working on it");
                 alert.showAndWait();
-
-                //debug
-                System.out.println("Debug: " + e.getMessage());
-                System.out.println("stackTrace: " + e.getStackTrace());
             }
         }
     }
 
-    //Freeware Agreement hyperlink
-    @FXML
     public void freewareAgreement(ActionEvent event) throws URISyntaxException, IOException {
-//        Desktop.getDesktop.browse(new URI("https://www.freescreenrecording.com/legal/freeware_license_agreement.html"));
         if (Desktop.isDesktopSupported()) {
             Desktop.getDesktop().browse(new URI("https://www.freescreenrecording.com/legal/freeware_license_agreement.html"));
         }
